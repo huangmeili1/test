@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>后台管理</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.clearfix:after{
+				content:'';
+				display: table;
+			}
+			.clearfix:after{
+				clear: both;
+			}
+			body{
+				font-size: 100%;
+			}
+			header{
+				
+				height: 5%;
+				padding: 1rem;
+				background-color: black;
+			}
+			header h2{
+				color: white;
+			}
+			.container{
+				width: 100%;
+			}
+			.container .left_contenet{
+				width: 20%;
+				min-height: 680px;
+				background-color: lightblue;
+				float: left;
+				text-align: center;
+			}
+			.left_contenet ul li{
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+				font-size: 1.2rem;
+				border-bottom: 1px solid gray;
+				cursor: pointer;
+			}
+			.left_contenet ul ul{
+				display: none;
+				background-color: #000000;
+				color: white;
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+				
+			}
+			.left_contenet ul ul div{
+				border-bottom: 1px solid white;
+				padding: 1rem;
+			}
+			.left_contenet ul ul div a{
+				display: inline-block;
+				color: white;
+				text-decoration: none;
+				padding-top: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h2>后台管理</h2>
+		</header>
+		<div class="container">
+			<div class="left_contenet">
+				<ul>
+					<li>关于我</li>
+					<ul>
+						<div><a href="add_user_message.html">添加关于我的信息</a></div>
+					</ul>
+					<li>文章管理</li>
+					<ul>
+						<div><a href="article_ly.html">文章列表</a></div>
+						<div><a href="add_article.html">添加文章</a></div>
+					</ul>
+					<li>相册管理</li>
+					<ul>
+						<div><a href="add_photo.html">添加相册</a></div>
+					</ul>
+					<li>留言管理</li>
+					<ul>
+						<div><a href="ly_list.html">留言列表</a></div>
+					</ul>
+				</ul>
+			</div>
+			<div class="right_content">
+				
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script>
+	var lis=$(".left_contenet ul").find('li');
+	lis.each(function(index){
+		$(this).on('click',function(){
+			$(".left_contenet ul ul").eq(index).toggle();
+		})
+	})
+</script>

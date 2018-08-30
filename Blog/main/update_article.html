@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=dege" />
+		<title>更新文章</title>
+		<meta name="viewport" content="width=device-width",initial-scale=1 />
+		<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../css/add_article.css" />
+		<script type="text/javascript" src="../utf8-php/ueditor.config.js"></script>
+		<script type="text/javascript" src="../utf8-php/ueditor.all.min.js"></script>
+		<script type="text/javascript" src="../utf8-php/lang/zh-cn/zh-cn.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="nav clearfix">
+				<span class="silde">下拉</span>
+				<h2>个人博客</h2>
+				<nav>
+					<ul>
+						<li class="active"><a href="#">首页</a></li>
+						<li><a href="about_me.html">关于我</a></li>
+						<li><a href="my_photo.html">图片集锦</a></li>
+						<li><a href="life.html">慢生活</a></li>
+						<li><a href="stydy.html">学无止境</a></li>
+						<li><a href="tiem.html">时间轴</a></li>
+						<li><a href="add_ly.html">留言</a></li>
+					</ul>
+				</nav>
+				<div class="sildedown">
+					<ul>
+						<li class="silde_active"><a href="#">首页</a></li>
+						<li><a href="about_me.html">关于我</a></li>
+						<li><a href="my_photo.html">图片集锦</a></li>
+						<li><a href="life.html">慢生活</a></li>
+						<li><a href="stydy.html">学无止境</a></li>
+						<li><a href="tiem.html">时间轴</a></li>
+						<li><a href="add_ly.html">留言</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<h2>修改文章信息</h2>
+			
+			<form action="../php/update_article_message.php" method="post" enctype="multipart/form-data">
+				<input type="text" hidden="hidden" name="article_id" id="aritcle_id" />
+				<label>文章标题：</label>
+				<input type="text" required="required" id="article_title" name="article_title" placeholder="请输入文章的标题" /><br>
+				<label>文章副标题：</label>
+				<input type="text" id="article_small_title" name="article_small_title" placeholder="请输入文章副标题" />
+				<br>
+				<label>推荐：</label>
+				<select id="article_know" onchange="show_bigimg()" name="article_know">
+					<option>不推荐</option>
+					<option>一级推荐</option>
+					<option>二级推荐</option>
+					<option>三级推荐</option>
+					<option>五级推荐</option>
+				</select>
+				<br>
+				<label>类型:</label>
+				<select name="article_type" id="article_type">
+					<option>慢生活</option>
+					<option>学无止境</option>
+				</select>
+				<div class="big_img">
+					<input type="text" hidden="hidden" id="old_big_img" name="old_big_img" />
+					 <label for="article_img2" class="myimg">
+						    	<div class="add_big_img">
+						    		文章大图
+						    	</div>
+					 </label>
+					 <input type="file" hidden="hidden" onchange="show_my_img2(this)" id="article_img2" name="article_bigimg" placeholder="请输入名字">
+					 </div>
+				<div>
+					<span class="small_title">文章小图片：</span>
+					<input type="hidden" type="text" id="old_small_img" />
+					<label for="article_img" class="myimg">
+						 <div class="article_img" id="small_title">
+						 	上传文章图片
+						 </div>  
+						   
+					</label>
+					<input type="file" hidden="hidden" onchange="show_my_img(this)" id="article_img" name="article_img">
+				</div>
+				<br>
+				<label>文章简介</label><br>
+				<textarea class="small_artice" name="small_artice"></textarea>
+				<br>
+				 <label>关键字</label>
+				 <input type="text"  id="keyword" name="keyword" placeholder="请输入关键字">
+				 <label>作者</label>
+				 <input type="text" required="required" id="author" name="author" placeholder="请输入作者名字">
+				 <input type="submit" value="修改" />
+			</form>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<!--<script type="text/javascript" src="../js/update_article.js"></script>-->
+	<script>
+function show_my_img2(e){
+	var img=e.files[0];
+		var fr=new FileReader();
+		if(img['type']!='image/jpeg'){
+			alert("请选择正确的图片格式");
+			$(this).val('');
+		}else{
+			fr.onload=function(){
+				$(".add_big_img").html('<img width="150px" height="150px" src="'+fr.result+'">')
+			}
+		}
+	  fr.readAsDataURL(img);
+}
+function show_bigimg(){
+	var optins=$("#article_know").val();
+	 switch(optins){
+	 	case '一级推荐':
+	 		$(".big_img").slideDown();
+	 		break;
+	 	case '二级推荐':
+	 		$(".big_img").hide();
+	 		break;
+	 	case '三级推荐':
+	 		$(".big_img").hide();
+	 		break;
+	 	case '五级推荐':
+	 		$(".big_img").hide();
+	 		break;
+	 	case '不推荐':
+	 		$(".big_img").hide();
+	 		break;
+	 }
+}
+function show_my_img(e){
+	var img=e.files[0];
+		var fr=new FileReader();
+		if(img['type']!='image/jpeg'){
+			alert("请选择正确的图片格式");
+			$(this).val('');
+		}else{
+			fr.onload=function(){
+				$("#small_title").html('<img width="150px" height="150px" src="'+fr.result+'">')
+			}
+		}
+		fr.readAsDataURL(img);
+}
+var form1=document.getElementsByTagName("form")[0];
+form1.onsubmit=function(e){
+	var options=$("#article_know").val();
+	if(options=='一级推荐'){
+		var old_bigimg=$("#old_bigimg").val();
+		var article_img2=$("#article_img2").val();
+		if(article_img2==''){
+			if(old_bigimg==''){
+			alert("请选择文章大图后才能提交");
+			return false;	
+			}else{
+				return true;
+			}
+			
+		}else{
+			return true;
+		}
+	}else if(options=='二级推荐'||options=='三级推荐'){
+		var old_article_img=$("#old_small_img").val();
+		var article_img=$("#article_img").val();
+		if(article_img==''){
+			if(old_article_img==''){
+				alert("请选择文章小图后才能提交");
+				return false;
+			}else{
+				return true;
+			}
+		}else{
+			return true;
+		}
+	}else{
+		return true;
+	}
+	e.preventDefault();
+}
+	</script>
+<script>
+	var ur=window.location.href;
+var article_id=ur.substring(ur.indexOf("=")+1);
+window.onload=function(){
+	get_article();
+}
+function get_article(){
+	var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					eval("var info="+xhr.responseText);
+					console.log(info);
+					$("#aritcle_id").val(info.article_id);
+					$("#article_title").val(info.article_title);
+					$("#article_small_title").val(info.article_small_title);
+					$("#article_know").val(info.articel_know);
+					$("#article_type").val(info.article_type);
+					if(info.articel_know=='一级推荐'){
+						$(".add_big_img").html('<img width="150" height="150" src='+info.article_bigimg+'>');
+						$(".big_img").show();
+					}
+					if(info.article_bigimg==''){
+						
+					}else{
+						$("#old_big_img").val(info.article_bigimg);
+					}
+					if(info.article_img==''){
+						
+					}else{
+						$("#old_small_img").val(info.article_img);
+						$("#small_title").html('<img width="150" height="150" src='+info.article_img+'>');
+					}
+					$(".small_artice").val(info.article_small);
+					$("#keyword").val(info.article_keyword);
+					$("#author").val(info.author);
+				}
+			}
+			xhr.open('POST','../php/get_article.php');
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+			xhr.send('article_id='+"article_id="+article_id);
+}
+
+</script>

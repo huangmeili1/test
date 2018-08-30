@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=dege" />
+		<title></title>
+		<meta name="viewport" content="width=device-width",initial-scale=1 />
+		<!--<link rel="stylesheet" type="text/css" href="../css/article.css" />-->
+		
+	</head>
+	<style>
+		*{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+body{
+	background-color:#efefef;
+}
+.clearfix:after{
+				content:'';
+				display: table;
+			}
+			.clearfix:after{
+				clear: both;
+			}
+.silde{
+	float: left;
+	line-height: 4rem;
+	display: none;
+	cursor: pointer;
+}
+.sildedown li{
+		list-style: none;
+		padding: 1rem;
+		border-bottom: 1px solid gainsboro;
+	}
+.sildedown li a{
+		text-decoration: none;
+		color: black;
+		font-size: 1.2rem;
+}
+.sildedown .silde_active{
+	background-color: cornflowerblue;
+	color: white !important;
+}
+.sildedown{			
+	display: none;
+	background: white;
+	margin-top: 0.0rem;
+	width: 100%;
+	transition:transform .5s ease-out;
+}
+
+header{
+	width: 100%;
+	margin: 0 auto;
+	background: white;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+header .nav{
+	width: 70%;
+	margin: 0 auto;
+}
+header h2{
+	float: left;
+	padding: 0.9rem;
+	font-size: 1.5rem;
+}
+header nav ul{
+	text-align: right;
+}
+header nav ul li{
+	display: inline-block;
+	padding-top: 1.4rem;
+	padding-bottom: 1.4rem;
+	padding-left: 0.6rem;
+}
+header nav ul li a{
+	padding: 1.4rem 2rem;
+	color: black;
+	text-decoration: none;
+	font-size: 1.1rem;
+}
+header .nav nav ul li a:hover{
+	background-color: #3690cf;
+	color: white;
+}
+header .nav nav ul .active{
+	background-color: #3690cf;
+	color: white;
+}
+header .nav nav ul .active a{
+	color: white;
+}
+.contanier{
+	width: 70%;
+	/*background: white;*/
+	height: auto;
+	margin: 0 auto;
+	margin-top: 1rem;
+}
+.contanier .left_content{
+	float: left;
+	width: 68%;
+	background-color: white;
+}
+.contanier .right_content{
+	float: right;
+	width: 30%;
+	margin-left: 1rem;
+}
+.contanier .left_content .main_content{
+	width: 95%;
+	margin: 0 auto;
+	color: grey;
+}
+.contanier .left_content .small_content{
+	background-color: ghostwhite;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	line-height: 1.7rem;
+	font-size: 1rem;
+}
+.contanier .left_content .main_content h1{
+	font-size: 1.5rem;
+	color: black;
+	margin-top: 1.8rem;
+	margin-bottom: 2rem;
+}
+.contanier .left_content .main_content p{
+	line-height: 1.7rem;
+	font-size: 1rem;
+	color: #000000;
+	letter-spacing: 1.2px;
+}
+.contanier .left_content .main_content .small_say span{
+	color: black;
+}
+.contanier .left_content .main_content .small_say span +span{
+	padding-left: 0.5rem;
+	color: black;
+}
+.get_good{
+		text-align: center;
+		margin-top: 4rem;
+		margin-bottom: 2rem;
+		}
+.contanier .left_content .main_content .get_good button{
+				border: 0;
+				background-color: #E2523A;
+				color: white;
+				padding: 0.7rem 4rem;
+				border-radius: 0.2rem;
+				cursor: pointer;
+			}
+	.other{
+				padding-bottom: 2rem;
+			}
+			.other span{
+				display: block;
+				padding-top: 1rem;
+				
+			}
+			.other span a{
+				text-decoration: none;
+				color: gray;
+			}
+			.other span a:hover{
+				text-decoration: underline;
+			}
+			.contanier .right_content .some_let .active{
+				background-color: cadetblue;
+				color: white;
+			}
+			.contanier .right_content .some_let{
+			width: 100%;
+			background-color: white;
+			border-bottom: 1px solid #C0C0C0;
+		}
+		.contanier .right_content .some_let li{
+			display: inline-block;
+			padding: 0.8rem;
+			cursor: pointer;
+			
+		}
+		.contanier .right_content .some_let li + li{
+			margin-left: 1rem;
+		}
+		.contanier .right_content .some_articles ul li{
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			list-style: none;
+			line-height: 2rem;
+			padding-left: 1rem;
+			list-style: none;
+			background: url(../img/li.png) left center no-repeat;
+		}
+		.contanier .right_content .some_articles .order_articles1{
+			background-color: white;
+			width: 100%;
+		}
+		.contanier .right_content .some_articles .order_articles1 ul li a{
+			text-decoration: none !important;
+			color: black;
+		}
+		.contanier .right_content .some_articles .new_articles1{
+			background-color: white;
+		}
+		.contanier .right_content .some_articles .new_articles1{
+			display: none;
+		}
+		.contanier .right_content .some_articles .new_articles1 ul li a{
+			text-decoration: none;
+			color: black;
+		}
+		.contanier .right_content .myimg{
+				margin-top: 1.5rem;
+			}
+			.contanier .right_content .myimg h2{
+				margin: 0;
+				padding: 0.5rem;
+				font-size: 1rem;
+				background-color: white;
+			}
+			.contanier .right_content .myimg{
+				width: 100%;
+				background-color: rgba(255,255,255,0.5);
+				padding-bottom: 1rem;
+				
+			}
+			.contanier .right_content .myimg ul{
+				width: 100%;
+				margin: 0 auto;
+				padding: 0;
+				margin-top: 1rem;
+			}
+			.contanier .right_content .myimg li{
+				float: left;
+				width: 30%;
+				display: inline-block;
+			}
+			.contanier .right_content .myimg ul li{
+				margin-left: 0.5rem;
+			}
+			.contanier .right_content .myimg li a img{
+				width: 100%;
+				transition: all 0.5s;
+				height: 5rem;
+			}
+			.contanier .right_content .myimg ul li img:hover{
+				transform: scale(1.02);
+			}
+			.contanier .right_content .some_icon{
+				background-color: white;
+				margin-top: 1rem;
+				padding-bottom: 1rem;
+			}
+			.contanier .right_content .some_icon h2{
+				padding: 0.5rem;
+				
+			}
+			.contanier .right_content .some_icon .icon button{
+				border: 0;
+				background-color: coral;
+				color: white;
+				padding: 0.5rem;
+				border-radius: 0.3rem;
+				margin-left: 0.5rem;
+			}
+			.contanier .right_content .care_me h2{
+				margin: 0;
+				padding: 0.5rem;
+				font-size: 1rem;
+				background-color: white;
+			}
+			.contanier .right_content .care_me{
+				margin-top: 1.5rem;
+				background-color: rgba(255,255,255,0.5);
+			}
+			.contanier .right_content .care_me img{
+				width: 100%;
+			}
+			.contanier .left_content .article_content{
+				padding-bottom: 2rem;
+			}
+			.contanier .left_content .article_content .line{
+				width: 100%;
+				height: 2px;
+				background: black;
+			}
+			.contanier .left_content .article_content span{
+				color: gray;
+				margin-top: 1rem;
+				
+			}
+			.contanier .left_content .user_content{
+				width: 100%;
+			}
+			.contanier .left_content .user_content img{
+				width: 70px;
+				float: left;
+				height: 70px;
+				border-radius: 35px;
+			}
+			.contanier .left_content .user_content{
+				text-align: right;
+				border-bottom: 1px solid gray;
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+				
+			}
+			.contanier .left_content .user_content .da{
+				text-align: left;
+				float: left;
+				color: black;
+				padding-right: 1rem;
+			}
+			.contanier .left_content .user_content p{
+				text-align: left;
+			}
+			.contanier .left_content .article_content form{
+				margin-top: 1rem;
+				margin-left: 1rem;
+			}
+			.contanier .left_content .article_content form #content{
+				width: 90%;
+				margin-top: 2rem;
+			}
+			.contanier .left_content .article_content form input[type='submit']{
+				border: 0;
+				padding: 0.5rem;
+				background-color: brown;
+				color: white;
+				border-radius: 3px;
+			}
+			
+			.contanier .left_content .article_content .content{
+				padding-top: 10rem;
+			}
+			footer{
+				padding-top: 5rem;
+				text-align: center;
+				color: gray;
+				text-shadow: 2px 2px white;
+				padding-bottom:4rem;
+			}
+			@media only screen  and (max-width: 94rem) {
+				header .nav{
+					width: 80%;
+					margin: 0 auto;
+				}
+				.contanier{
+					width: 80%;
+				}
+			}
+			@media only screen  and (max-width: 82rem) {
+				header .nav{
+					width: 90%;
+					margin: 0 auto;
+				}
+				.contanier{
+					width: 90%;
+				}
+			}
+			@media only screen  and (max-width: 74rem) {
+				header .nav{
+					width: 95%;
+					margin: 0 auto;
+				}
+				.contanier{
+					width: 95%;
+				}
+				header nav ul li{
+					padding-left: 0.4rem;
+				}
+				header nav ul li a{
+					padding: 1.4rem 1.3rem;
+				}
+			}
+			@media only screen  and (max-width: 58rem) {
+				header h2{
+					text-align: center;
+					float: none;
+				}
+				.silde{
+					display: block;
+				}
+				header nav ul{
+					display: none;
+				}
+			}
+			@media only screen  and (max-width: 53rem){
+				.contanier .right_content{
+					width: 31%;
+					margin-left: 0.2rem;
+				}
+				.contanier .right_content .myimg ul li{
+				margin-left: 0.3rem;
+				}
+				.contanier .right_content .some_let li{
+					padding: 0.8rem 0.5rem;
+					
+				}
+				.contanier .right_content .some_let li + li{
+					margin-left: 0.7rem;
+				}
+			}
+			@media only screen  and (max-width: 53rem){
+				.contanier .right_content{
+					float: none;
+					display: none;
+				}
+				.contanier .left_content{
+					width: 100%;
+				}
+			}
+			.article_content button:last-child{
+				border: 0;
+				padding: 0.7rem;
+				background-color: brown;
+				color: white;
+				border-radius: 0.6rem;
+			}
+			.go_to_top{
+				width: 7rem;
+				height: 2rem;
+				background-color: rgba(0,0,0,0.8);
+				position: fixed;
+				right: 0;
+				bottom: 1rem;
+				color: white;
+				text-align: center;
+				line-height: 2rem;
+				display: none;
+				cursor: pointer;
+			}
+	</style>
+	<body>
+		<div class="go_to_top">
+			回到顶部
+		</div>
+		<header>
+			<div class="nav clearfix">
+				<span class="silde clearfix">下拉</span>
+				<h2>个人博客</h2>
+				<nav>
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li><a href="about_me.html">关于我</a></li>
+						<li><a href="my_photo.html">图片集锦</a></li>
+						<li  class="active"><a href="#">慢生活</a></li>
+						<li><a href="stydy.html">学无止境</a></li>
+						<li><a href="tiem.html">时间轴</a></li>
+						<li><a href="add_ly.html">留言</a></li>
+					</ul>
+				</nav>
+				<div class="sildedown">
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li><a href="about_me.html">关于我</a></li>
+						<li><a href="my_photo.html">图片集锦</a></li>
+						<li class="silde_active"><a href="#">慢生活</a></li>
+						<li><a href="stydy.html">学无止境</a></li>
+						<li><a href="tiem.html">时间轴</a></li>
+						<li><a href="add_ly.html">留言</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="contanier clearfix">
+			<div class="left_content">
+				<div class="main_content">
+				<h1 class="article_title"></h1>
+				<div class="small_say">
+					<span>作者:</span><span class="author"></span>
+					<span class="author_type"></span>
+					<span class="article_time"></span>
+					<span class="see_num"></span><em>人已经阅读</em>
+				</div>
+				
+				<div class="small_content">
+					<span>简介：</span>
+					<span class="small">
+						
+					</span>
+				</div>
+				<div class="real_content">
+					
+				</div>
+					
+					<div class="get_good">
+						<button>很赞哦!(<span class="love_num"></span>)^^</button>
+					</div>
+				</div>
+				<div class="other">
+					<span>上一篇：<a href="#">静心养性，纳凉消暑处处春意</a></span>
+					<span>下一篇：<a href="#">真正的强者在于衡量自己和珍视别人 </a></span>
+				</div>
+				<div class="article_content">
+					<h2>文章评论</h2>
+					<div class="line"></div>
+					<div class="real_say">
+						
+					</div>
+					
+					<span>来说两句吧.....</span>
+					<form id="form1" action="#">
+						<label for="username">用户名:</label>
+						<input id="username" name="username" type="user_name" /><span class="show_message"></span><br>
+						<textarea id="content" name="content" rows="5"></textarea>
+					</form>
+					<button id="content_button">提交</button>
+				</div>
+			</div>
+			<div class="right_content">
+				<div class="some_let">
+					<ul>
+						<li class="active">点击排行</li>
+						<li>站长推荐</li>
+					</ul>
+				</div>
+				<div class="some_articles">
+					<div class="order_articles1">
+						<ul>
+						
+						</ul>
+					</div>
+					<div class="new_articles1">
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="myimg">
+					<h2>我的相册</h2>
+					<ul class="imgs clearfix">
+						
+					</ul>
+				</div>
+				<div class="some_icon">
+					<h2>标签云</h2>
+					<div class="icon">
+						
+					</div>
+				</div>
+				<div class="care_me">
+					<h2>关注我&nbsp;&nbsp;&nbsp;么么哒</h2>
+					<img src="../img/wx.jpg" />
+				</div>
+				
+			</div>
+		</div>
+		<footer>
+			<span>
+			Design by XXX个人博客 XXXXXX
+			</span>
+		</footer>
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<!--<script type="text/javascript" src="../js/article.js"></script>-->
+	<script type="text/javascript">
+		//最新文章开始
+var some_let=document.getElementsByClassName("some_let")[0];
+	var some_button=some_let.getElementsByTagName("li");
+	var order_articles1=document.getElementsByClassName("order_articles1")[0];
+	var new_articles1=document.getElementsByClassName("new_articles1")[0];
+	for(var i=0;i<some_button.length;i++){
+		some_button[i].index=i;
+		some_button[i].onclick=function(){
+			if(this.index==0){
+				some_button[0].setAttribute('class','active');
+				some_button[1].removeAttribute('class','active');
+				order_articles1.style.display='block';
+				new_articles1.style.display='none';
+			}else{
+				some_button[1].setAttribute('class','active');
+				some_button[0].removeAttribute('class','active');
+				order_articles1.style.display='none';
+				new_articles1.style.display='block';
+			}
+		}
+	}
+//	最新文章结束
+//获取文章内容
+		var vhref=location.href;//获取链接
+		var queryString = vhref.substring(vhref.indexOf("?article_id=") + 1);//获取链接参数
+		var queryString2= vhref.substring(vhref.indexOf("=") + 1);//
+		
+		window.onload=function(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					eval("var info="+xhr.responseText);
+//					console.log(info);
+					if(info.article_keyword!=''){
+						var keyword1=info.article_keyword.replace(/，/g,",");
+						var keyword=(keyword1).split(",");
+						var ke='';
+						for(var i=0;i<keyword.length;i++){
+							ke+='<button class="icon">'+keyword[i]+'</button>';
+						}
+						$(".icon").append(ke);
+					}else{
+						$(".some_icon").hide();
+					}
+					$(".article_title").text(info.article_title);
+					$(".author").text(info.author);
+					$(".author_type").text(info.article_type);
+					$(".article_time").text(info.article_time);
+					$(".see_num").text(info.see_num);
+					if(info.article_small==''){
+						$(".small").html(getWord(info.article_content,120)+"...");
+					}else{
+						$(".small").text(info.article_small);
+					}
+					$(".love_num").text(info.love_num);
+					$(".real_content").html(info.article_content);
+					document.title=info.article_title;
+				}
+			}
+			xhr.open('POST','../php/get_article.php');
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+			xhr.send('article_id='+queryString);
+			add_see();
+			get_order();
+			get_five();
+			get_content();
+			get_imgs();
+		} 
+		//获取文章内容结束
+		//增加浏览量
+		function add_see(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					
+				}
+			}
+			xhr.open('POST','../php/update_see.php');
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+			xhr.send("article_id="+queryString);
+		}
+		function getWord(content,num){
+			var str=content.replace(/<[^>]+>/g,"");//将html格式去掉	
+			str=str.replace(/(^\s*)|(\s*$)/g, "");//删除空格				
+			str=str.substr(0,num);//截取字段				
+			return str;
+		}
+		//点击排行
+		function get_order(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					eval("var info="+xhr.responseText);
+					var str='';
+					for(var i=0;i<info.length;i++){
+						str+='<li><a href="article.html??article_id='+info[i].article_id+'">'+info[i].article_title+'<a href="article.html"></li>';
+					}
+					
+					$(".order_articles1 ul").append(str);
+				}
+			}
+			xhr.open('POST','../php/order.php');
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+			xhr.send(null);
+		}
+		//站长推荐
+		function get_five(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					eval("var info="+xhr.responseText);
+					var str='';
+					for(var i=0;i<info.length;i++){
+					str+='<li><a href="article.html?article_id='+info[i].article_id+'">'+info[i].article_title+'<a href="article.html"></li>';
+					}
+					$(".new_articles1 ul").append(str);
+				}
+			}
+			xhr.open('POST','../php/let_know.php');
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+			xhr.send(null);
+		}
+		//下拉列表
+	var silde=document.getElementsByClassName("silde")[0];
+	silde.onclick=function(){
+		var sildedown=document.getElementsByClassName("sildedown")[0];
+		if(sildedown.style.display=='block'){
+			sildedown.style.display='none';
+			
+		}else{
+			sildedown.style.display='block';
+		}
+	}
+	//表扬
+	$(".get_good button").on('click',function(){
+		var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					eval("var info="+xhr.responseText);
+					$(".love_num").text(info[0]);
+					alert("感谢你的表扬哦!^^");
+				}
+			}
+			xhr.open('POST','../php/update_love.php');
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+			xhr.send("article_id="+queryString);
+	});
+var falg='false';
+$("#username").on('blur',function(e){
+if(e.target.value==''){
+	
+}else{
+var url='../php/check_and_addcontent.php';
+var data={"username":e.target.value,"check_type":'username'};
+var success=function(response){
+	if(response.msg=='fail'){
+		$(".show_message").html('<span style="color:red">此用户名已经有人使用了哦</span>');
+	}else{
+		$(".show_message").html('<span style="color:blue">你起了个好名字哦^^</span>');
+		falg='true';
+	}
+}
+$.post(url,data,success,'json');
+}
+
+})
+$(".article_content button:last-child").on('click',function(){
+	var content=$("#form1 #content").val();
+	var username=$("#form1 #username").val();
+	if(username==''){
+		alert('请填写你的用户名');
+		$(".show_message").html('<span style="color:red">请填写用户名</span>');
+		$("#form1 #username").focus();
+	}else if(content==''){
+		alert('请填写你的评论内容');
+		$("#form1 #content").focus();
+	}else if(falg=='false'){
+		alert("你的用户名已经有人用了，请更改");
+	}else{
+	var url='../php/check_and_addcontent.php';
+	var data={"user_name":username,"content":content,"article_id":queryString2};
+	var success=function(response){
+		if(response.msg=='fail'){
+			alert('评论失败，请稍后再试');
+		}else{
+			var str='';
+			str+='<div class="user_content clearfix">';
+			str+='<img src="../artcile/2018072806300223.jpg" />';
+			str+='<div class="clearfix">';
+			str+='<span class="da">'+username+'</span>';
+			str+='<span>'+response.data+'</span>';
+			str+='<p>';	
+			str+=content;
+			str+='</p>';
+			str+='</div>';
+			str+='</div>';	
+			$(".real_say").append(str);
+		}
+	}
+	$.post(url,data,success,'json');
+	}
+})
+//显示评论
+function get_content(){
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+		if(xhr.readyState==4){
+			if(xhr.responseText!=''){
+				eval("var info="+xhr.responseText);
+				str='';
+				for(var i=0;i<info.length;i++){
+					str+='<div class="user_content clearfix">';
+					str+='<img src="../artcile/2018072806300223.jpg" />';
+					str+='<div class="clearfix">';
+					str+='<span class="da">'+info[i].user_name+'</span>';
+					str+='<span>'+info[i].content_date+'</span>';
+					str+='<p>';	
+					str+=info[i].content;
+					str+='</p>';
+					str+='</div>';
+					str+='</div>';	
+				}
+				$(".real_say").append(str);
+			}
+		}
+	}
+	xhr.open('POST','../php/get_content.php');
+	xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+	xhr.send('article_id='+queryString);
+}
+
+//获取我的相册
+//获取照片
+function get_imgs(){
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+		if(xhr.readyState==4){
+			eval("var info="+xhr.responseText);
+			var str="";
+			for(var i=0;i<info.length;i++){
+				var a=info[i].photo_imgs;
+				var imgs=a.split("*");
+				console.log(imgs[0]);
+				str+='<li><a href="photo_see.html?content_id='+info[i].photo_id+'"><img src="'+imgs[0]+'"></a></li>';
+			}
+			$(".imgs").append(str);
+		}
+	}
+	xhr.open('POST','../php/get_my_photo2.php');
+	xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+	xhr.send(null);
+}
+//回到顶部
+window.onscroll=function(){
+var top1=$(window).height();	
+var top=$(window).scrollTop();
+//console.log(top);
+if(top>top1-300){
+	$(".go_to_top").show();
+}else{
+	$(".go_to_top").hide();
+}
+}
+$(".go_to_top").on('click',function(){
+	$("html,body").animate({
+		scrollTop:0
+	},500)
+})
+	</script>

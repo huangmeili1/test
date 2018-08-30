@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=dege" />
+		<title>文章列表</title>
+		<meta name="viewport" content="width=device-width",initial-scale=1 />
+		<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+		<!--<link rel="stylesheet" type="text/css" href="../css/article_list.css" />-->
+		<style>
+			*{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+body{
+	background-color:#efefef;
+}
+.clearfix:after{
+				content:'';
+				display: table;
+			}
+			.clearfix:after{
+				clear: both;
+			}
+.silde{
+	float: left;
+	line-height: 4rem;
+	display: none;
+	cursor: pointer;
+}
+.sildedown li{
+		list-style: none;
+		padding: 1rem;
+		border-bottom: 1px solid gainsboro;
+	}
+.sildedown li a{
+		text-decoration: none;
+		color: black;
+		font-size: 1.2rem;
+}
+.sildedown .silde_active{
+	background-color: cornflowerblue;
+	color: white !important;
+}
+.sildedown{			
+	display: none;
+	background: white;
+	margin-top: 0.0rem;
+	width: 100%;
+	transition:transform .5s ease-out;
+}
+
+header{
+	width: 100%;
+	margin: 0 auto;
+	background: white;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+header .nav{
+	width: 70%;
+	margin: 0 auto;
+}
+header h2{
+	float: left;
+	padding: 0.9rem;
+	font-size: 1.5rem;
+}
+header nav ul{
+	text-align: right;
+}
+header nav ul li{
+	display: inline-block;
+	padding-top: 1.4rem;
+	padding-bottom: 1.4rem;
+	padding-left: 0.6rem;
+}
+header nav ul li a{
+	padding: 1.4rem 2rem;
+	color: black;
+	text-decoration: none;
+	font-size: 1.1rem;
+}
+header .nav nav ul li a:hover{
+	background-color: #3690cf;
+	color: white;
+}
+header .nav nav ul .active{
+	background-color: #3690cf;
+	color: white;
+}
+header .nav nav ul .active a{
+	color: white;
+}
+.container{
+	width: 98%;
+	margin: 0 auto;
+	height:auto;
+	background-color: white;
+	margin-top: 1rem;
+	text-align: center;
+	min-height: 400px;
+}
+.container h1{
+	font-weight: normal;
+	padding: 0;
+	margin: 0;
+	margin-top: 1rem;
+	padding-bottom: 1rem;
+}
+.container .show_ly{
+	width: 100%;
+	margin: 0 auto;
+}
+.show_ly tr td{
+	margin: 0;
+	padding: 0;
+	padding: 1rem;
+	word-spacing: normal;
+	text-overflow: ellipsis;
+}
+.show_ly a{
+	text-decoration: none;
+}
+.show_ly p{
+		white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.show_ly tr:nth-child(2n){
+	background:ghostwhite;
+}
+.show_some_ly{
+	top:0;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.3);
+	z-index: 3;
+	display: none;
+}
+.show_one_ly{
+	width: 50%;
+	margin: 0 auto;
+	height: auto;
+	background-color: white;
+	font-size: 1.2rem;
+	padding-bottom: 5rem;
+	height: 600px;
+	overflow: scroll;
+	margin-top: 1.2rem;
+	overflow-x: hidden;
+}
+.show_some_ly:hover{
+	display: none;
+}
+.show_one_ly span{
+	margin-left: 2rem;
+	line-height: 2rem;
+}
+.show_one_ly h2{
+	font-weight: normal;
+	text-align: center;
+	color: gainsboro;
+}
+.show_one_ly p{
+	text-indent: 2rem;
+	padding: 0.5rem;
+}
+.show_one_ly button{
+	border:0;
+	padding: 0.7rem;
+	border-radius: 0.2rem;
+	color: white;
+	background-color: crimson;
+	margin-left: 1rem;
+	cursor: pointer;
+}
+.main_content{
+	width: 95%;
+	margin: 0 auto;
+	color: grey;
+}
+.small_content{
+	background-color: ghostwhite;
+	margin-bottom: 1rem;
+	line-height: 1.7rem;
+	font-size: 1rem;
+}
+.main_content h1{
+	font-size: 1.5rem;
+	color: black;
+	margin-bottom: 1rem;
+}
+.main_content p{
+	line-height: 1.7rem;
+	font-size: 1rem;
+	color: #000000;
+	letter-spacing: 1.2px;
+}
+.main_content .small_say span{
+	color: black;
+}
+.main_content .small_say span +span{
+	padding-left: 0rem;
+	color: black;
+}
+.colse{
+	cursor: pointer;
+}
+.update,.del{
+	color: white;
+	text-decoration: none;
+	padding: 0.7rem;
+	border-radius: 0.5rem;
+	background-color: crimson;
+}
+@media only screen  and (max-width: 94rem) {
+				header .nav{
+					width: 80%;
+					margin: 0 auto;
+				}
+				.container .show_ly p{
+					width: 320px;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+			}
+			@media only screen  and (max-width: 82rem) {
+				header .nav{
+					width: 90%;
+					margin: 0 auto;
+				}
+			}
+			@media only screen  and (max-width: 74rem) {
+				header .nav{
+					width: 95%;
+					margin: 0 auto;
+				}
+				header nav ul li{
+					padding-left: 0.4rem;
+				}
+				header nav ul li a{
+					padding: 1.4rem 1.3rem;
+				}
+			}
+			@media only screen  and (max-width: 58rem) {
+				header h2{
+					text-align: center;
+					float: none;
+				}
+				.silde{
+					display: block;
+				}
+				header nav ul{
+					display: none;
+				}
+				.container .show_ly p{
+					width: 200px;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+			}
+			@media only screen and (max-width: 51rem) {
+				.container .show_ly p{
+					width: 100px;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+			}
+			footer{
+				padding-top: 1rem;
+				text-align: center;
+				color: gray;
+				text-shadow: 2px 2px white;
+				padding-bottom:4rem;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="nav clearfix">
+				<span class="silde">下拉</span>
+				<h2>个人博客</h2>
+				<nav>
+					<ul>
+						<li class="active"><a href="#">首页</a></li>
+						<li><a href="about_me.html">关于我</a></li>
+						<li><a href="my_photo.html">图片集锦</a></li>
+						<li><a href="life.html">慢生活</a></li>
+						<li><a href="stydy.html">学无止境</a></li>
+						<li><a href="tiem.html">时间轴</a></li>
+						<li><a href="add_ly.html">留言</a></li>
+					</ul>
+				</nav>
+				<div class="sildedown">
+					<ul>
+						<li class="silde_active"><a href="#">首页</a></li>
+						<li><a href="about_me.html">关于我</a></li>
+						<li><a href="my_photo.html">图片集锦</a></li>
+						<li><a href="life.html">慢生活</a></li>
+						<li><a href="stydy.html">学无止境</a></li>
+						<li><a href="tiem.html">时间轴</a></li>
+						<li><a href="add_ly.html">留言</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="show_some_ly">
+			<div class="show_one_ly">
+				<h2 class="colse">点击此处关闭屏幕</h2>
+				<div>
+					<div class="main_content">
+					<h1 class="article_title"></h1>
+					<div class="small_say">
+						<span>作者:</span><span class="author"></span>
+						<span class="author_type"></span>
+						<span class="article_time"></span>
+						<span class="see_num"></span><em>人已经阅读</em>
+						<span class="love_num"></span><em>点赞</em>
+					</div>
+					
+					<div class="small_content">
+						<span>简介：</span>
+						<span class="small">
+							
+						</span>
+					</div>
+					<div class="real_content">
+						
+					</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="container">
+			<h1>文章列表</h1>
+			<table class="show_ly" cellspacing="0">
+				<thead>
+					<tr>
+						<th>文章标题</th>
+						<th>留言内容</th>
+						<th>留言类型</th>
+						<th>文章推荐</th>
+						<th class="ly_time">文章发表时间</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+	
+				</tbody>
+			</table>
+		</div>
+		<footer>
+			<span>Design by 黄梅丽个人博客 XXXXXX</span>
+		</footer>
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/article_list.js"></script>

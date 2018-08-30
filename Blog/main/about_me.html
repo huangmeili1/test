@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=dege" />
+		<title>关于我</title>
+		<meta name="viewport" content="width=device-width",initial-scale=1 />
+		<style>
+			*{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+body{
+	background-color:#efefef;
+}
+.clearfix:after{
+				content:'';
+				display: table;
+			}
+			.clearfix:after{
+				clear: both;
+			}
+.silde{
+	float: left;
+	line-height: 4rem;
+	display: none;
+	cursor: pointer;
+}
+.sildedown li{
+		list-style: none;
+		padding: 1rem;
+		border-bottom: 1px solid gainsboro;
+	}
+.sildedown li a{
+		text-decoration: none;
+		color: black;
+		font-size: 1.2rem;
+}
+.sildedown .silde_active{
+	background-color: cornflowerblue;
+	color: white !important;
+}
+.sildedown{			
+	display: none;
+	background: white;
+	margin-top: 0.0rem;
+	width: 100%;
+	transition:transform .5s ease-out;
+}
+
+header{
+	width: 100%;
+	margin: 0 auto;
+	background: white;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+header .nav{
+	width: 70%;
+	margin: 0 auto;
+}
+header h2{
+	float: left;
+	padding: 0.9rem;
+	font-size: 1.5rem;
+}
+header nav ul{
+	text-align: right;
+}
+header nav ul li{
+	display: inline-block;
+	padding-top: 1.4rem;
+	padding-bottom: 1.4rem;
+	padding-left: 0.6rem;
+}
+header nav ul li a{
+	padding: 1.4rem 2rem;
+	color: black;
+	text-decoration: none;
+	font-size: 1.1rem;
+}
+header .nav nav ul li a:hover{
+	background-color: #3690cf;
+	color: white;
+}
+header .nav nav ul .active{
+	background-color: #3690cf;
+	color: white;
+}
+header .nav nav ul .active a{
+	color: white;
+}
+.contanier{
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
+	margin-top: 1rem;
+}
+.left_content{
+	width: 30%;
+	float: left;
+	height: auto;
+}
+.right_content{
+	width: 68%;
+	height: auto;
+	float: right;
+	background-color: white;
+}
+.right_content .right_about{
+	width: 95%;
+	margin: 0 auto;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.right_content .right_about p{
+	text-indent: 2rem;
+	line-height: 1.6rem;
+}
+		.contanier .left_content .aboutme{
+				background-color: rgba(255,255,255,0.5);
+				padding-bottom: 0.5rem;
+			}
+			.contanier .left_content .aboutme h2{
+				margin: 0;
+				padding: 0.5rem;
+				font-size: 1rem;
+				background-color: white;
+			}
+			.contanier .left_content .aboutme ul{
+				margin: 0 auto;
+				padding: 0;
+			}
+			.contanier .left_content .aboutme ul i{
+				float: left;
+				/*background: red;*/
+				margin: 0 auto;
+				padding: 0;
+				margin-right: 1rem;
+				width: 125px;
+				height: 80px;
+				margin-left: 1rem;
+				margin-bottom:5px;
+				margin-top: 1rem;
+			}
+			.contanier .left_content .aboutme ul i img{
+				display: block;
+				width: 100%;
+				border-radius: 0.7rem;
+			}
+			.contanier .left_content .aboutme ul p{
+				display: block;
+				line-height: 1.7rem;
+				color: gray;
+				margin-right: 0.6rem;
+			}
+			.contanier .left_content .myimg{
+				margin-top: 1.5rem;
+			}
+			.contanier .left_content .myimg h2{
+				margin: 0;
+				padding: 0.5rem;
+				font-size: 1rem;
+				background-color: white;
+			}
+			.contanier .left_content .myimg{
+				width: 100%;
+				background-color: rgba(255,255,255,0.5);
+				padding-bottom: 1rem;
+				
+			}
+			.contanier .left_content .myimg ul{
+				width: 100%;
+				margin: 0 auto;
+				padding: 0;
+				margin-top: 1rem;
+			}
+			.contanier .left_content .myimg li{
+				float: left;
+				width: 30%;
+				display: inline-block;
+			}
+			.contanier .left_content .myimg ul li{
+				margin-left: 0.5rem;
+			}
+			.contanier .left_content .myimg li a img{
+				width: 100%;
+				transition: all 0.5s;
+				height: 5rem;
+			}
+			.contanier .left_content .myimg ul li img:hover{
+				transform: scale(1.02);
+			}
+			.contanier .left_content .some_let{
+			width: 100%;
+			background-color: white;
+			border-bottom: 1px solid #C0C0C0;
+		}
+		.contanier .left_content .some_let li{
+			display: inline-block;
+			padding: 0.8rem;
+			cursor: pointer;
+		}
+		.contanier .left_content .some_let li + li{
+			margin-left: 1rem;
+		}
+		.contanier .left_content .some_let .active{
+			background-color: cadetblue;
+			color: white;
+		}
+		.contanier .left_content .some_articles{
+			width: 100%;
+			background-color: white;
+			position: relative;
+			height: 270px;
+		}
+		.contanier .left_content .some_articles ul li{
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			list-style: none;
+			line-height: 2rem;
+			padding-left: 1rem;
+			list-style: none;
+			background: url(../img/li.png) left center no-repeat;
+		}
+		.contanier .left_content .some_articles .order_articles1{
+			width: 100%;
+			
+			position: absolute;
+		}
+		.contanier .left_content .some_articles .order_articles1 ul li a{
+			text-decoration: none !important;
+			color: black;
+		}
+		.contanier .left_content .some_articles .new_articles1{
+			display: none;
+		}
+		.contanier .left_content .some_articles .new_articles1 ul li a{
+			text-decoration: none;
+			color: black;
+		}
+		.contanier .left_content .care_me h2{
+				margin: 0;
+				padding: 0.5rem;
+				font-size: 1rem;
+				background-color: white;
+			}
+			.contanier .left_content .care_me{
+				margin-top: 1.5rem;
+				background-color: rgba(255,255,255,0.5);
+			}
+			.contanier .left_content .care_me img{
+				width: 100%;
+			}
+			@media only screen and (max-width:94rem) {
+				header .nav{
+					width: 80%;
+					margin: 0 auto;
+				}
+				.contanier{
+				width: 80%;
+			}
+			}
+			@media only screen and (max-width:83rem) {
+				header .nav{
+					width: 90%;
+				}
+				.contanier{
+				width: 90%;
+				}
+				header nav ul li{
+					display: inline-block;
+					padding-top: 1.4rem;
+					padding-bottom: 1.4rem;
+					padding-left: 0.2rem;
+				}
+			}
+			@media only screen and (max-width:92rem) {
+				header .nav{
+					width: 95%;
+					margin: 0 auto;
+				}
+				.contanier{
+				width: 95%;
+				}
+				header nav ul li a{
+					padding: 1.4rem 1.1rem;
+				}
+			}
+			@media only screen and (max-width:63rem) {
+					header nav ul li a{
+					padding: 1.4rem 0.8rem;
+					}
+					.contanier .left_content .myimg ul li{
+					margin-left: 0.4rem;
+					}
+					
+			}
+			@media only screen and (max-width: 49rem){
+				header h2{
+					text-align: center;
+					float: none;
+				}
+				.silde{
+					display: block;
+				}
+				header nav ul{
+					display: none;
+				}
+			}
+			@media only screen and (max-width: 43rem){
+				.left_content{
+					display: none;
+					float: none;
+				}
+				.right_content{
+					width: 100%;
+				}
+			}
+			footer{
+				padding-top: 1rem;
+				text-align: center;
+				color: gray;
+				text-shadow: 2px 2px white;
+				padding-bottom:4rem;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="nav clearfix">
+				<span class="silde clearfix">下拉</span>
+				<h2>个人博客</h2>
+				<nav>
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li class="active"><a href="#">关于我</a></li>
+						<li><a href="my_photo.html">图片集锦</a></li>
+						<li><a href="life.html">慢生活</a></li>
+						<li><a href="stydy.html">学无止境</a></li>
+						<li><a href="tiem.html">时间轴</a></li>
+						<li><a href="add_ly.html">留言</a></li>
+					</ul>
+				</nav>
+				<div class="sildedown">
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li class="silde_active"><a href="#">关于我</a></li>
+						<li><a href="my_photo.html">图片集锦</a></li>
+						<li><a href="life.html">慢生活</a></li>
+						<li><a href="stydy.html">学无止境</a></li>
+						<li><a href="tiem.html">时间轴</a></li>
+						<li><a href="add_ly.html">留言</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="contanier clearfix">
+			<div class="left_content">
+				<div class="aboutme">
+					<h2>关于我</h2>
+					<ul class="clearfix">
+							
+					</ul>
+				</div>
+				<div class="myimg">
+					<h2>我的相册</h2>
+					<ul class="imgs clearfix">
+						
+					</ul>
+				</div>
+				<div class="some_let">
+					<ul>
+						<li class="active">点击排行</li>
+						<li>最新文章</li>
+					</ul>
+				</div>
+				<div class="some_articles">
+					<div class="order_articles1">
+						<ul>
+							
+						</ul>
+					</div>
+					<div class="new_articles1">
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="care_me">
+					<h2>关注我&nbsp;&nbsp;&nbsp;么么哒</h2>
+					<img src="../img/wx.jpg" />
+				</div>
+			</div>
+			<div class="right_content">
+				<div class="right_about">
+					
+				</div>
+			</div>
+		</div>
+		<footer>
+			<span>Design by 黄梅丽个人博客 XXXXXXX</span>
+		</footer>
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<!--<script type="text/javascript" src="../js/about_me.js"></script>-->
+<script>
+	window.onload=function(){
+	get_message();
+	get_order();
+	get_new();
+	get_imgs();
+}
+function getWord(content,num){
+			var str=content.replace(/<[^>]+>/g,"");//将html格式去掉	
+			str=str.replace(/(^\s*)|(\s*$)/g, "");//删除空格				
+			str=str.substr(0,num);//截取字段				
+			return str;
+		}
+function get_message(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					eval("var message="+xhr.responseText);
+//					console.log(message);
+					var str='';
+					str+='<ul class="clearfix"><i><img src="'+message.myimg+'" /></i><p><b>'+message.user_name+',</b>'+getWord(message.about,70)+"..."+'"</p></ul>';
+					$(".aboutme").append(str);
+					$(".right_about").html(message.about);
+				}
+			}
+			xhr.open('get','../php/user_message.php');
+			xhr.send(null);
+		}
+
+//点击
+var some_let=document.getElementsByClassName("some_let")[0];
+	var some_button=some_let.getElementsByTagName("li");
+	var order_articles1=document.getElementsByClassName("order_articles1")[0];
+	var new_articles1=document.getElementsByClassName("new_articles1")[0];
+	for(var i=0;i<some_button.length;i++){
+		some_button[i].index=i;
+		some_button[i].onclick=function(){
+			if(this.index==0){
+				some_button[0].setAttribute('class','active');
+				some_button[1].removeAttribute('class','active');
+				order_articles1.style.display='block';
+				new_articles1.style.display='none';
+			}else{
+				some_button[1].setAttribute('class','active');
+				some_button[0].removeAttribute('class','active');
+				order_articles1.style.display='none';
+				new_articles1.style.display='block';
+			}
+		}
+	}
+	function get_order(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					eval("var info="+xhr.responseText);
+					var str='';
+					for(var i=0;i<info.length;i++){
+						str+='<li><a href="article.html??article_id='+info[i].article_id+'">'+info[i].article_title+'<a href="article.html"></li>';
+					}
+					
+					$(".order_articles1 ul").append(str);
+				}
+			}
+			xhr.open('POST','../php/order.php');
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+			xhr.send(null);
+		}
+	function get_new(){
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+		if(xhr.readyState==4){
+			eval("var info="+xhr.responseText);
+			var str='';
+			for(var i=0;i<info.length;i++){
+				str+='<li><a href="article.html??article_id='+info[i].article_id+'">'+info[i].article_title+'</a></li>';
+			}
+			$(".new_articles1 ul").append(str);
+		}
+	}
+	xhr.open('POST','../php/get_new.php');
+	xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+	xhr.send(null);
+}
+	//获取照片
+function get_imgs(){
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+		if(xhr.readyState==4){
+			eval("var info="+xhr.responseText);
+			var str="";
+			for(var i=0;i<info.length;i++){
+				var a=info[i].photo_imgs;
+				var imgs=a.split("*");
+				console.log(imgs[0]);
+				str+='<li><a href="photo_see.html?content_id='+info[i].photo_id+'"><img src="'+imgs[0]+'"></a></li>';
+			}
+			$(".imgs").append(str);
+		}
+	}
+	xhr.open('POST','../php/get_my_photo2.php');
+	xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+	xhr.send(null);
+}
+</script>

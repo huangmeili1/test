@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="ie=dege" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width",initial-scale=1 />
+		<title>我的相册</title>
+	</head>
+	<style>
+		*{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+body{
+	background-color:#efefef;
+}
+.clearfix:after{
+				content:'';
+				display: table;
+			}
+			.clearfix:after{
+				clear: both;
+			}
+.silde{
+	float: left;
+	line-height: 4rem;
+	display: none;
+	cursor: pointer;
+}
+.sildedown li{
+		list-style: none;
+		padding: 1rem;
+		border-bottom: 1px solid gainsboro;
+	}
+.sildedown li a{
+		text-decoration: none;
+		color: black;
+		font-size: 1.2rem;
+}
+.sildedown li:hover{
+	background-color: cornflowerblue;
+	color: white !important;
+}
+.sildedown li:hover a{
+	color: white;
+}
+.sildedown .silde_active{
+	background-color: cornflowerblue;
+}
+.sildedown .silde_active a{
+	color: white;
+}
+.sildedown{			
+	display: none;
+	background: white;
+	margin-top: 0.0rem;
+	width: 100%;
+	transition:transform .5s ease-out;
+}
+
+header{
+	width: 100%;
+	margin: 0 auto;
+	background: white;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+header .nav{
+	width: 70%;
+	margin: 0 auto;
+}
+header h2{
+	float: left;
+	padding: 0.9rem;
+	font-size: 1.5rem;
+}
+header nav ul{
+	text-align: right;
+}
+header nav ul li{
+	display: inline-block;
+	padding-top: 1.4rem;
+	padding-bottom: 1.4rem;
+	padding-left: 0.6rem;
+}
+header nav ul li a{
+	padding: 1.4rem 2rem;
+	color: black;
+	text-decoration: none;
+	font-size: 1.1rem;
+}
+header .nav nav ul li a:hover{
+	background-color: #3690cf;
+	color: white;
+}
+header .nav nav ul .active{
+	background-color: #3690cf;
+	color: white;
+}
+header .nav nav ul .active a{
+	color: white;
+}
+.container{
+				width: 70%;
+				margin: 0 auto;
+				height: auto;
+				background: transparent;
+				margin-top: 1.5rem;
+			}
+			.container .show{
+				width:24%;
+				height: auto;
+				background-color: transparent;
+				float: left;
+			}
+			.container .show +.show{
+				margin-left: 0.8rem;
+			}
+			.container .show ul{
+				width: 100%;
+				margin: 0 auto;
+				padding: 0;
+			}
+			.container .show ul li{
+				width: 100%;
+				text-align: center;
+				list-style: none;
+				background-color: white;
+			}
+			.container .show ul li .line{
+				width: 80%;
+				margin: 0 auto;
+				height: 1px;
+				background-color: gainsboro;
+			}
+			.container .show ul li +li{
+				margin-top: 1rem;
+			}
+			.container .show ul li p{
+				width: 80%;
+				margin: 0 auto;
+				padding: 1rem 0;
+				color: gray;
+			}
+			.container .show ul li a{
+				width: 100%;
+				
+			}
+			.container .show ul li a img{
+				width: 90%;
+				margin-top: 0.8rem;
+				transition: all 0.5s;
+			}
+			.container .show ul li a img:hover{
+				transform: scale(1.02);
+			}
+			@media only screen and (max-width:94rem) {
+				header .nav{
+					width: 80%;
+					margin: 0 auto;
+				}
+				.container{
+				width: 80%;
+				}
+			}
+			@media only screen and (max-width:83rem) {
+				header .nav{
+					width: 90%;
+				}
+				header nav ul li{
+					display: inline-block;
+					padding-top: 1.4rem;
+					padding-bottom: 1.4rem;
+					padding-left: 0.2rem;
+				}
+			}
+			@media only screen and (max-width:92rem) {
+				header .nav{
+					width: 95%;
+					margin: 0 auto;
+				}
+				.container{
+				width: 95%;
+				}
+				header nav ul li a{
+					padding: 1.4rem 1.1rem;
+				}
+			}
+			@media only screen and (max-width:65rem) {
+					header nav ul li a{
+					padding: 1.4rem 0.8rem;
+					}
+			}
+			@media only screen and (max-width: 75rem) {
+				.container .show +.show{
+				margin-left: 0.5rem;
+				}
+			}
+			@media only screen  and (max-width: 70rem) {
+			header{
+				width: 100%;
+			}
+			nav{
+				width: 90%;
+			}
+			header nav ul li a{
+				padding: 1.4rem 0.6rem;
+			}
+			.container{
+				width: 90%;
+				}
+			}
+			@media only screen  and (max-width: 50rem){
+			header{
+				width: 98%;
+			}
+			nav{
+				width: 98%;
+			}
+			.container{
+				width: 98%;
+			}
+				}
+				@media only screen  and (max-width: 60rem){
+						.container{
+						width: 100%;
+						}
+						header{
+							width: 100%;
+						}
+						nav{
+							width: 100%;
+						}
+					.container .show ul li a img{
+					width: 95%;
+					margin-top: 0.4rem;
+					}
+				}
+				@media only screen and (max-width: 49rem){
+				header h2{
+					text-align: center;
+					float: none;
+				}
+				.silde{
+					display: block;
+				}
+				header nav ul{
+					display: none;
+				}
+			}
+				@media only screen  and (max-width: 47rem){
+					header{
+						text-align: center;
+						}
+					nav ul li +li{
+					padding-left: 0.5rem;	
+					}
+					nav li a{
+					text-decoration: none;
+					color:#C93282;
+					padding: 9px;
+					font-weight: normal;
+					}
+				}
+				@media only screen and (max-width: 47rem) {
+					.container .show{
+					width:48%;
+					}
+					.container .show{
+					margin-left: 0.3rem;
+					}
+				}
+				@media only screen and (max-width: 29rem) {
+					.container .show{
+					width:90%;
+					margin: 0 auto !important;
+					padding: 0;
+					}
+					.container .show{
+					padding-left:1.3rem;
+					}
+				}
+	</style>
+	<body>
+		<header>
+			<div class="nav clearfix">
+				<span class="silde clearfix">下拉</span>
+				<h2>个人博客</h2>
+				<nav>
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li><a href="about_me.html">关于我</a></li>
+						<li class="active"><a href="#">图片集锦</a></li>
+						<li><a href="life.html">慢生活</a></li>
+						<li><a href="stydy.html">学无止境</a></li>
+						<li><a href="tiem.html">时间轴</a></li>
+						<li><a href="add_ly.html">留言</a></li>
+					</ul>
+				</nav>
+				<div class="sildedown">
+					<ul>
+						<li><a href="index.html">首页</a></li>
+						<li><a href="about_me.html">关于我</a></li>
+						<li class="silde_active"><a href="#">图片集锦</a></li>
+						<li><a href="life.html">慢生活</a></li>
+						<li><a href="stydy.html">学无止境</a></li>
+						<li><a href="tiem.html">时间轴</a></li>
+						<li><a href="add_ly.html">留言</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="container clearfix">
+			<div class="show">
+				<ul class="ul1">
+					
+				</ul>
+			</div>
+			<div class="show">
+				<ul class="ul2">
+					
+				</ul>
+			</div>
+			<div class="show">
+				<ul class="ul3">
+					
+				</ul>
+			</div>
+			<div class="show">
+				<ul class="ul4">
+					
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<!--<script type="text/javascript" src="../js/my_photo.js"></script>-->
+<script>
+	
+window.onload=function(){
+	get_imgs();
+}
+function getWord(content,num){
+		var str=content.replace(/<[^>]+>/g,"");//将html格式去掉	
+		str=str.replace(/(^\s*)|(\s*$)/g, "");//删除空格				
+		str=str.substr(0,num);//截取字段				
+		return str;
+}
+//获取照片
+function get_imgs(){
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+		if(xhr.readyState==4){
+			eval("var info="+xhr.responseText);
+			var j=1;
+			for(var i=0;i<info.length;i++){
+				var a=info[i].photo_imgs;
+				var imgs=a.split("*");
+				console.log(imgs[0]);
+				var str='<li><a href="photo_see.html?photo_id='+info[i].photo_id+'"><img src="'+imgs[0]+'" /></a>';
+				str+='<h4>'+info[i].photo_title+'</h4><div class="line"></div>';
+				str+='<p>'+getWord(info[i].photo_content,40)+'</p></li>';	
+				$(".container .ul"+j).append(str);
+				if(j==4){
+					j=1;
+				}else{
+					j++;
+				}
+				
+			}
+		}
+	}
+	xhr.open('POST','../php/get_my_photo.php');
+	xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+	xhr.send(null);
+}
+//下拉列表
+	var silde=document.getElementsByClassName("silde")[0];
+	silde.onclick=function(){
+		var sildedown=document.getElementsByClassName("sildedown")[0];
+		if(sildedown.style.display=='block'){
+			sildedown.style.display='none';
+			
+		}else{
+			sildedown.style.display='block';
+		}
+	}
+</script>

@@ -1,0 +1,754 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+body{
+	background-color:ghostwhite;
+}
+.clearfix:after{
+				content:'';
+				display: table;
+			}
+			.clearfix:after{
+				clear: both;
+			}
+.silde{
+	float: left;
+	line-height: 4rem;
+	display: none;
+	cursor: pointer;
+}
+.sildedown li{
+		list-style: none;
+		padding: 1rem;
+		border-bottom: 1px solid gainsboro;
+	}
+.sildedown li a{
+		text-decoration: none;
+		color: black;
+		font-size: 1.2rem;
+}
+.sildedown .silde_active{
+	background-color: cornflowerblue;
+	color: white !important;
+}
+.sildedown{			
+	display: none;
+	background: white;
+	margin-top: 0.0rem;
+	width: 100%;
+	transition:transform .5s ease-out;
+}
+
+header{
+	width: 100%;
+	margin: 0 auto;
+	background: white;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+header .nav{
+	width: 70%;
+	margin: 0 auto;
+}
+header h2{
+	float: left;
+	padding: 0.9rem;
+	font-size: 1.5rem;
+}
+header nav ul{
+	text-align: right;
+}
+header nav ul li{
+	display: inline-block;
+	padding-top: 1.4rem;
+	padding-bottom: 1.4rem;
+	padding-left: 0.6rem;
+}
+header nav ul li a{
+	padding: 1.4rem 2rem;
+	color: black;
+	text-decoration: none;
+	font-size: 1.1rem;
+}
+header .nav nav ul .active{
+	background-color: #3690cf;
+}
+.contanier{
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 1rem;
+}
+.contanier .left_content{
+	float: left;
+	width: 68%;
+	
+}
+.contanier .right_content{
+	float: right;
+	width: 30%;
+}
+.banner{
+			position: relative;
+			width: 100%;
+			margin: 0 auto;
+			height: 400px;
+			
+		}
+		.banner .banner1{
+			position: absolute;
+			width:100%;
+			height:100%;
+			background:white;
+			opacity: 1;
+			z-index: 1;
+			transition: all 0.5s;
+		}
+		.banner .banner1 a{
+			text-decoration: none;
+			color: white;
+			
+		}
+		.banner .banner1 a img{
+			width: 100%;
+			height: 100%;
+		}
+		.banner .nums{
+			position: absolute;
+			opacity: 1;
+			z-index: 4;
+			transition: all 0.5s;
+			bottom:5%;
+			left: 40%;
+		}
+		.banner .nums li{
+			float: left;
+			list-style: none;
+			background-color: rgba(255,255,255,0.4);
+			padding: 0.5rem;
+			margin-left: 1rem;
+			border-radius: 1rem;
+		}
+	.banner .nums .nums_active{
+		background-color: white;
+	}
+	.banner .banner1 .article_title{
+		text-align: center;
+		background-color: rgba(0,0,0,0.5);
+		width: 100%;
+		position: absolute;
+		opacity: 1;
+		z-index: 4;
+		transition: all 0.5s;
+		bottom:10%;
+		height: 10%;
+		left: 0;
+		font-size: 1.5rem;
+		color: white;
+		font-weight: normal;
+	}
+	.banner .banner1 .article_title a{
+		color: white;
+	}
+.banner .pre{
+			display: none;
+			position: absolute;
+			opacity: 1;
+			z-index: 4;
+			transition: all 0.5s;
+			bottom:43%;
+			left: 0%;
+			height: auto;
+			background-color: rgba(255,255,255,0.6);
+			font-size: 3rem;
+			text-align: center;
+			cursor: pointer;
+		}
+		.banner .next{
+			display: none;
+			position: absolute;
+			opacity: 1;
+			z-index: 4;
+			transition: all 0.5s;
+			bottom:43%;
+			right: 0%;
+			height: auto;
+			font-size: 3rem;
+			text-align: center;
+			background-color: rgba(255,255,255,0.6);
+			cursor: pointer;
+		}
+	.contanier .left_content .news{
+		
+	}
+	.contanier .left_content .news ul{
+		margin: 0;
+		padding: 0;
+	}
+	.contanier .left_content .news ul li{
+		background: white;
+		float: left;
+		list-style: none;
+		padding: 0.5rem;
+		width: 46%;
+		margin-top: 1rem;
+	}
+	.contanier .left_content .news ul li:nth-child(2n){
+		margin-left: 1.5rem;
+	}
+	.contanier .left_content .news ul li a{
+		width: 100%;
+		text-decoration: none;
+		text-align: center;
+		color: black;
+		
+	}
+	.contanier .left_content .news ul li a h2{
+		font-weight: normal;
+		margin-top: 1rem;
+	}
+	.contanier .left_content .news ul li a img{
+		float: left;
+		width: 50%;
+		transition: all 0.5s;
+	}
+	.contanier .left_content .news ul li a img:hover{
+		transform: scale(1.02);
+	}
+.contanier .left_content .three{
+	width: 100%;
+	margin-top: 1rem;
+	padding-bottom: 1rem;
+}
+.contanier .left_content .three ul{
+	margin: 0 auto;
+	padding: 0;
+	font-size: 0;
+}
+.contanier .left_content .three ul li{
+	list-style: none;
+	float: left;
+	width: 32%;
+	height: 150px;
+	
+	margin-left: 0.8rem;
+	position: relative;
+}
+.contanier .left_content .three ul li:nth-child(1){
+	margin-left: 0;
+}
+.contanier .left_content .three ul li:nth-child(4){
+	margin-left: 0;
+}
+.contanier .left_content .three ul li a{
+	text-decoration: none;
+	width: 100%;
+}
+.contanier .left_content .three ul li a img{
+	width: 100%;
+	height: 100%;
+	transition: all 0.5s;
+}
+.contanier .left_content .three ul li a img:hover{
+	transform: scale(1.02);
+}
+.contanier .left_content .three ul li .small_say{
+	display: none;
+	color: white;
+	position: absolute;
+	width: 100%;
+	height: 30%;
+	background-color: rgba(0,0,0,0.5);
+	bottom: 0;
+	left: 0;
+	z-index: 300;
+	font-size: 1rem;
+}
+.contanier .left_content .three ul li:hover .small_say{
+	display: block;
+}
+.contanier .know{
+	background-color: white;
+	padding: 0.6rem;
+	margin-bottom: 1rem;
+}
+.contanier .main_content{
+	width: 100%;
+	
+}
+.contanier .main_content .article{
+	padding: 1.3rem;
+	background-color: white;
+}
+.contanier .main_content .article + .article{
+	margin-top: 1rem;
+}
+.contanier .main_content .article img{
+	width: 28%;
+	float: left;
+	padding-right: 1rem;
+}
+.contanier .main_content .article h2{
+	font-size: 1.4rem;
+	padding-bottom: 1rem;
+	margin-left: 0;
+	padding-left: 0;
+}
+.contanier .main_content .article .p{
+	color: gray;
+	margin-top: 1rem;
+	line-height: 1.4rem;
+	
+}
+.contanier .main_content .article p{
+	word-break: break-all;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+.contanier .main_content .article .icons{
+	
+	margin: 0;
+	padding: 0;
+	margin-top: 2rem;
+}
+.contanier .main_content .article .icons li{
+	display: inline-block;
+	padding: 0.1rem;
+	margin-right: 1rem;
+	padding-bottom: 0;
+	float: left;
+	padding-left:1.3rem ;
+	
+}
+.contanier .main_content .article .icons li:first-child{
+	background: url(../img/auicon.jpg) no-repeat 0 0;
+}
+.contanier .main_content .article ul li:nth-child(2){
+	background: url(../img/auicon.jpg) no-repeat top -23px left;
+}
+.contanier .main_content .article ul li:nth-child(3){
+	background: url(../img/auicon.jpg) no-repeat top -44px left;
+}
+.contanier .main_content .article ul li:nth-child(4){
+	background: url(../img/auicon.jpg) no-repeat top -64px left;
+}
+.contanier .main_content .article .icons span{
+	padding-left: 1rem;
+}
+.contanier .right_content .second{
+	width: 100%;
+}
+.contanier .right_content .second ul{
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+}
+.contanier .right_content .second ul li a{
+	width: 100%;
+	text-decoration: none;
+}
+.contanier .right_content .second ul li{
+	position: relative;
+	width: 100%;
+	list-style: none;
+	height: 192px;
+}
+.contanier .right_content .second ul li + li{
+	margin-top: 1rem;
+}
+.contanier .right_content .second ul li a img{
+	width: 100%;
+	height: 100%;
+}
+.contanier .right_content .second ul li .show{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.1);
+	top:0;
+	left:0;
+}
+.contanier .right_content .second ul li:hover .show{
+	background-color: rgba(0,0,0,0);
+}
+.contanier .right_content .second ul li .show_title{
+	position: absolute;
+	width: 100%;
+	height: 20%;
+	background-color: rgba(0,0,0,0.5);
+	bottom:0;
+	left:0;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 2.3rem;
+	color: white;
+}
+.contanier .right_content .second ul li .buttons{
+	font-size: 0.8rem;
+	position: absolute;
+	width: auto;
+	height: auto;
+	
+	top:10%;
+	left:8%;
+}
+.contanier .right_content .second ul li .buttons button{
+	border: 0;
+	background-color: rgba(54, 144, 207,.8);
+	color: white;
+	padding: 0.5rem;
+	border-radius: 3px;
+}
+.contanier .right_content .some_tips{
+	width: 100%;
+	margin-top: 1rem;
+}
+.contanier .right_content .aboutme{
+				background-color: rgba(255,255,255,0.5);
+				padding-bottom: 0.5rem;
+			}
+			.contanier .right_content .aboutme h2{
+				margin: 0;
+				padding: 0.5rem;
+				font-size: 1rem;
+				background-color: white;
+			}
+			.contanier .right_content .aboutme ul{
+				margin: 0 auto;
+				padding: 0;
+			}
+			.contanier .right_content .aboutme ul i{
+				float: left;
+				/*background: red;*/
+				margin: 0 auto;
+				padding: 0;
+				margin-right: 1rem;
+				width: 125px;
+				height: 80px;
+				margin-left: 1rem;
+				margin-bottom:5px;
+				margin-top: 1rem;
+			}
+			.contanier .right_content .aboutme ul i img{
+				display: block;
+				width: 100%;
+				border-radius: 0.7rem;
+			}
+			.contanier .right_content .aboutme ul p{
+				display: block;
+				line-height: 1.7rem;
+				color: gray;
+				margin-right: 0.6rem;
+			}
+			.contanier .right_content .myimg{
+				margin-top: 1.5rem;
+			}
+			.contanier .right_content .myimg h2{
+				margin: 0;
+				padding: 0.5rem;
+				font-size: 1rem;
+				background-color: white;
+			}
+			.contanier .right_content .myimg{
+				width: 100%;
+				background-color: rgba(255,255,255,0.5);
+				padding-bottom: 1rem;
+				
+			}
+			.contanier .right_content .myimg ul{
+				width: 100%;
+				margin: 0 auto;
+				padding: 0;
+				margin-top: 1rem;
+			}
+			.contanier .right_content .myimg li{
+				float: left;
+				width: 30%;
+				display: inline-block;
+			}
+			.contanier .right_content .myimg ul li{
+				margin-left: 0.5rem;
+			}
+			.contanier .right_content .myimg li a img{
+				width: 100%;
+				transition: all 0.5s;
+				height: 5rem;
+			}
+			.contanier .right_content .myimg ul li img:hover{
+				transform: scale(1.02);
+			}
+		.contanier .right_content .some_let{
+			width: 100%;
+			background-color: white;
+			border-bottom: 1px solid #C0C0C0;
+		}
+		.contanier .right_content .some_let li{
+			display: inline-block;
+			padding: 0.8rem;
+			cursor: pointer;
+		}
+		.contanier .right_content .some_let li + li{
+			margin-left: 1rem;
+		}
+		.contanier .right_content .some_let .active{
+			background-color: cadetblue;
+			color: white;
+		}
+		.contanier .right_content .some_articles{
+			width: 100%;
+			background-color: white;
+			position: relative;
+			height: 270px;
+		}
+		.contanier .right_content .some_articles ul li{
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			list-style: none;
+			line-height: 2rem;
+			padding-left: 1rem;
+			list-style: none;
+			background: url(../img/li.png) left center no-repeat;
+		}
+		.contanier .right_content .some_articles .order_articles1{
+			width: 100%;
+			
+			position: absolute;
+		}
+		.contanier .right_content .some_articles .order_articles1 ul li a{
+			text-decoration: none !important;
+			color: black;
+		}
+		.contanier .right_content .some_articles .new_articles1{
+			display: none;
+		}
+		.contanier .right_content .some_articles .new_articles1 ul li a{
+			text-decoration: none;
+			color: black;
+		}
+		.contanier .right_content .friend_link{
+				margin-top: 1.5rem;
+				background-color: white;
+			}
+			.contanier .right_content .friend_link h2{
+				margin: 0;
+				padding: 0.5rem;
+				font-size: 1rem;
+				background-color: white;
+			}
+			.contanier .right_content .friend_link ul{
+				margin: 0 auto;
+				padding: 0;
+				margin-left: 0.4rem;
+			}
+			.contanier .right_content .friend_link ul li a{
+				text-decoration: none;
+				color: black;
+			}
+			.contanier .right_content .friend_link ul li{
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				list-style: none;
+				line-height: 2.5rem;
+				padding-left: 1rem;
+			}
+			.contanier .right_content .care_me h2{
+				margin: 0;
+				padding: 0.5rem;
+				font-size: 1rem;
+				background-color: white;
+			}
+			.contanier .right_content .care_me{
+				margin-top: 1.5rem;
+				background-color: rgba(255,255,255,0.5);
+			}
+			.contanier .right_content .care_me img{
+				width: 100%;
+			}
+			footer{
+				padding-top: 1rem;
+				text-align: center;
+				color: gray;
+				text-shadow: 2px 2px white;
+				padding-bottom:4rem;
+			}
+			@media only screen and (max-width:94rem) {
+				header .nav{
+					width: 80%;
+					margin: 0 auto;
+				}
+				.contanier{
+					width: 80%;
+				}
+			}
+			@media only screen and (max-width:83rem) {
+				header .nav{
+					width: 90%;
+				}
+				.contanier{
+					width: 90%;
+				}
+				header nav ul li{
+					display: inline-block;
+					padding-top: 1.4rem;
+					padding-bottom: 1.4rem;
+					padding-left: 0.2rem;
+				}
+			}
+			@media only screen and (max-width:92rem) {
+				header .nav{
+					width: 95%;
+					margin: 0 auto;
+				}
+				.contanier{
+					width: 95%;
+				}
+				header nav ul li a{
+					padding: 1.4rem 1.1rem;
+				}
+				.contanier .left_content .news ul li:nth-child(2n){
+				margin-left: 1.2rem;
+				}
+				.contanier .left_content .three ul li{
+				width: 30%;
+				margin-left: 1.4rem;
+				}
+			}
+			@media only screen and (max-width:63rem) {
+				.contanier .left_content .news ul li{
+					width: 44%;
+				}
+					.contanier .left_content .news ul li:nth-child(2n){
+					margin-left: 2rem;
+					}
+					.contanier .left_content .news ul li a h2{
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+					.contanier .left_content .news ul li a img{
+						float: none;
+						width: 100%;
+						transition: all 0.5s;
+					}
+					.contanier .right_content .myimg ul li{
+					margin-left: 0.4rem;
+					}
+					header nav ul li a{
+					padding: 1.4rem 0.8rem;
+					}
+					.banner{
+						width: 99%;
+						height: 350px;
+					}
+					.contanier .right_content .second ul li{
+					position: relative;
+					width: 100%;
+					list-style: none;
+					height: 168px;
+				}
+				.contanier .right_content .second ul li a{
+					text-decoration: none;
+					color: white;
+				}
+					
+			}
+			@media only screen and (max-width: 52rem) {
+				.contanier .left_content .news ul li{
+					float: none;
+					width: 95%;
+					
+				}
+				.contanier .left_content .news ul li img{
+					height: 70%;
+				}
+				.contanier .left_content .news ul li:nth-child(2n){
+					margin-left: 0rem;
+					}
+			}
+			@media only screen and (max-width: 49rem){
+				header h2{
+					text-align: center;
+					float: none;
+				}
+				.silde{
+					display: block;
+				}
+				header nav ul{
+					display: none;
+				}
+				.contanier{
+					width: 100%;
+					margin: 0 auto;
+				}
+				.contanier .right_content{
+					display: none;
+					float: none;
+					
+				}
+				.contanier .left_content{
+				
+					width: 90%;
+					margin: 0 auto;
+					margin-left: 2.5rem;
+				}
+				.contanier .left_content .news{
+					margin-left: 1rem;
+				}
+				.contanier .left_content .news ul li{
+					background: white;
+					float: left;
+					list-style: none;
+					padding: 0.5rem;
+					width: 44%;
+					margin-top: 1rem;
+				}
+				.contanier .left_content .three{
+					margin-left: 0rem;
+				}
+				.contanier .left_content .news ul li:nth-child(2n){
+					margin-left: 1.5rem;
+				}
+				.contanier .left_content .news ul li a img{
+						float: none;
+						width: 100%;
+						height: 150px;
+						transition: all 0.5s;
+					}
+					.banner{
+						width: 99%;
+						height: 380px;
+					}
+			}
+			@media only screen and (max-width:34rem) {
+				.contanier .left_content .news{
+					margin-left: 0rem;
+				}
+				.contanier .left_content .news ul li:nth-child(2n){
+					margin-left: 1rem;
+				}
+				.banner{
+						height: 340px;
+					}
+					.contanier .left_content .three ul li{
+					margin-left: 0rem;
+				}
+			}
+			@media only screen and (max-width:29rem){
+				.contanier .left_content .news ul li{
+					background: white;
+					float: none;
+					width: 100%;
+				}
+				.contanier .left_content .news ul li:nth-child(2n){
+					margin-left: 0rem;
+				}
+				.contanier .left_content .three ul li{
+					float: none;
+					width: 100%;
+					height: 100%;
+				}
+			}
